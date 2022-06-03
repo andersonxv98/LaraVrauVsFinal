@@ -39,8 +39,9 @@ class CompraController extends Controller
             Produto::findOrFail($id),
             [ 'quantidade' => 1, 'preco' => 0 ]
         );
-        $produtos = $this->carrinho->produtos;
-        return view('compras', compact('produtos'));
+        #$produtos = $this->carrinho->produtos;
+        //return view('compras', compact('produtos'));
+        return redirect('/carrinho');
     }
 
     public function remover($id){

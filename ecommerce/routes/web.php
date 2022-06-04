@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CLienteController;
 use App\Http\Controllers\CompraController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
@@ -42,5 +43,14 @@ Route::get('/remover/{id}',
 Route::get('/finalizar/',
     [CompraController::class, 'finalizar'])
     ->name('finalizar');
+
+Route::get('/carrinho/add/{id}', [CLienteController::class, 'adicionar_carrinho'])
+->name('adicionar_carrinho');
+
+Route::get('/carrinho/remove', [CLienteController::class, 'remover_carrinho'])
+->name('remover_carrinho');
+
+Route::get('/carrinho/checkout', [CLienteController::class, 'encerrar_compra'])
+->name('encerrar_compra');
 
 require __DIR__.'/auth.php';

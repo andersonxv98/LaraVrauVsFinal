@@ -48,14 +48,16 @@ class ProdutoController extends Controller
         try{
             $produto = new Produto();
             $dados = $request->only($produto->getFillable());
+           var_dump($dados);
             Produto::create($dados);
             return redirect()->action(
                 [ProdutoController::class, 'index'])
                     ->with("resposta", "Registro inserido");
         } catch (\Exception $e){
-            return redirect()->action(
+            echo $e;
+            /*return redirect()->action(
                 [ProdutoController::class, 'index'])
-                ->with("resposta", "Erro ao inserir!");
+                ->with("resposta", "Erro ao inserir!");*/
         }
     }
 

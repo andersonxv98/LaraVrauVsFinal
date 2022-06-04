@@ -21,6 +21,11 @@
                                      class="block mt-1 w-full"/>
                         </div>
                         <div>
+                            <x-label>Informe a preco:</x-label>
+                            <x-input name="preco" value="{{$produto->preco}}"
+                                     class="block mt-1 w-full"/>
+                        </div>
+                        <div>
                             <x-label>Selecione a categoria:</x-label>
                             <select name="categoria_id">
                                 @foreach($categorias as $c)

@@ -41,6 +41,9 @@
                                     Categoria
                                 </th>
                                 <th scope="col" class="px-6 py-3">
+                                    Preco
+                                </th>
+                                <th scope="col" class="px-6 py-3">
 
                                 </th>
                                 <th scope="col" class="px-6 py-3">
@@ -59,6 +62,9 @@
                                 </td>
                                 <td class="px-6 py-4">
                                     {{$p->categoria->descricao}}
+                                </td>
+                                <td class="px-6 py-4">
+                                    {{$p->preco}}
                                 </td>
                                 <td class="px-6 py-4 text-right">
                                     <a href="{{route("produto.edit", $p->id)}}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Alterar</a>
